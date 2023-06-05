@@ -5,7 +5,6 @@ import controler.BookControler;
 import model.entity.Book;
 import model.entity.Genre;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -70,7 +69,7 @@ public class Main {
                     if (temp == 3)
                         book.setGenre(Genre.SCIENCE);
 
-                    System.out.print ("insert new author: ");
+                    System.out.print("insert new author: ");
                     book.setAuthor(input.nextLine());
 
                     bookControler.update(book);
@@ -78,12 +77,12 @@ public class Main {
                 }
 
                 case 4 -> { // delete
-                    System.out.print ("insert id for delete: ");
+                    System.out.print("insert id for delete: ");
                     bookControler.delete(input.nextLong());
                 }
 
                 case 5 -> {// find all
-                    List<Book> bookList = new ArrayList<>();
+                    List<Book> bookList;
                     bookList = bookControler.findByAll();
                     bookList.forEach(System.out::println);
                 }

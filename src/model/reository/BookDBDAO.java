@@ -17,7 +17,7 @@ public class BookDBDAO implements BookDBDAOWrite, BookDBDAORead {
 
     final Connection connection;
     final Statement statement;
-    private PreparedStatement stmt;
+
 
     public BookDBDAO() {
         try {
@@ -42,7 +42,7 @@ public class BookDBDAO implements BookDBDAOWrite, BookDBDAORead {
         query = "select * from book";
         ResultSet set = statement.executeQuery(query);
         while (set.next()) {
-            Book book =new Book();
+            Book book = new Book();
             book.setBookName(set.getString("book_name"));
             book.setAuthor(set.getString("book_author"));
             book.setId(set.getInt("book_id"));
@@ -74,7 +74,7 @@ public class BookDBDAO implements BookDBDAOWrite, BookDBDAORead {
     public Book findById(long id) throws Exception {
         query = "select * from book where book_id = " + id;
         System.out.println(query);
-        stmt = connection.prepareStatement(query);
+        PreparedStatement stmt = connection.prepareStatement(query);
         ResultSet set = stmt.executeQuery();
 
         if (set.next()) {

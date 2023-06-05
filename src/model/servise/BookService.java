@@ -60,13 +60,13 @@ public class BookService implements BookServiceWrite, BookServiceRead {
     @Override
     public List<Book> findByAll() {
         List<Book> bookList;
-         try {
-             bookDBDAORead = new BookDBDAO();
-             bookList = bookDBDAORead.findByALL();
-             bookDBDAORead.close();
-         }catch (Exception e) {
-             throw new RuntimeException(e);
-         }
-         return bookList;
+        try {
+            bookDBDAORead = new BookDBDAO();
+            bookList = bookDBDAORead.findByALL();
+            bookDBDAORead.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return bookList;
     }
 }

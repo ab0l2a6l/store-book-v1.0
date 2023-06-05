@@ -10,6 +10,7 @@ import java.util.List;
 public class BookControler {
     BookServiceWrite bookServiceWrite = new BookService();
     BookServiceRead bookServiceRead = new BookService();
+
     public void save(Book book) {
         bookServiceWrite.save(book);
     }
@@ -18,7 +19,7 @@ public class BookControler {
         return bookServiceRead.findById(id);
     }
 
-    public void update (Book book) {
+    public void update(Book book) {
         bookServiceWrite.update(book);
     }
 
