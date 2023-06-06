@@ -26,13 +26,7 @@ public class Main {
                     book.setBookName(input.nextLine());
 
                     System.out.print("insert number of genre (1.Dram 2.Historical 3.Science): ");
-                    int temp = input.nextInt();
-                    if (temp == 1)
-                        book.setGenre(Genre.DRAM);
-                    else if (temp == 2)
-                        book.setGenre(Genre.HISTORICAL);
-                    else if (temp == 3)
-                        book.setGenre(Genre.SCIENCE);
+                    book.setGenre(Genre.valueOf(input.nextLine().toUpperCase()));
 
                     System.out.print("insert book id: ");
                     book.setId(input.nextLong());
@@ -59,15 +53,8 @@ public class Main {
                     System.out.print("insert new book name: ");
                     book.setBookName(input.nextLine());
 
-                    System.out.print("insert new genre(1.Dram 2.Historical 2.Science): ");
-                    int temp = input.nextInt();
-                    input.nextLine();
-                    if (temp == 1)
-                        book.setGenre(Genre.DRAM);
-                    if (temp == 2)
-                        book.setGenre(Genre.HISTORICAL);
-                    if (temp == 3)
-                        book.setGenre(Genre.SCIENCE);
+                    System.out.print("insert new genre(1.Dram 2.Historical 3.Science): ");
+                    book.setGenre(Genre.valueOf(input.nextLine().toUpperCase()));
 
                     System.out.print("insert new author: ");
                     book.setAuthor(input.nextLine());
